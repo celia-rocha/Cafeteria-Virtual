@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrinho - Café Grão Dourado</title>
+    <link rel="stylesheet" href="cardapio.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      body {
+        background-color: #d3b188;
+      }
+
+      header {
+        background-color: rgb(141, 95, 22);
+      }
+
+      .logo {
+        color: #fff5e6;
+      }
+
+      .cart-container {
+        background: white;
+        border-radius: 10px;
+        padding: 2rem;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        margin-top: 2rem;
+      }
+
+      .cart-items {
+        margin-bottom: 2rem;
+      }
+
+      .cart-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      .cart-item:last-child {
+        border-bottom: none;
+      }
+
+      .cart-total {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #8b7355;
+        text-align: right;
+        margin: 1.5rem 0;
+      }
+
+      .pix-section {
+        background: #fff5e6;
+        padding: 2rem;
+        border-radius: 10px;
+        margin-top: 2rem;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .pix-section h2 {
+        color: #8b7355;
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+
+      .pix-qrcode {
+        text-align: center;
+        margin: 2rem 0;
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      }
+
+      .pix-qrcode img {
+        max-width: 200px;
+        margin-bottom: 1rem;
+      }
+
+      .pix-instructions {
+        background: white;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-top: 1rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      }
+
+      .pix-instructions h3 {
+        color: #8b7355;
+        margin-bottom: 1rem;
+      }
+
+      .pix-instructions ol {
+        margin-left: 1.5rem;
+        margin-top: 1rem;
+        color: #5c4b3c;
+      }
+
+      .pix-instructions li {
+        margin-bottom: 0.8rem;
+      }
+
+      .copy-pix {
+        background: #8b7355;
+        color: white;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 5px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 1.5rem auto;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+      }
+
+      .copy-pix:hover {
+        background: #a68b6f;
+        transform: translateY(-2px);
+      }
+
+      .payment-status {
+        text-align: center;
+        margin-top: 2rem;
+        padding: 1rem;
+        border-radius: 5px;
+        display: none;
+      }
+
+      .payment-status.success {
+        background: #4caf50;
+        color: white;
+      }
+
+      .payment-status.error {
+        background: #f44336;
+        color: white;
+      }
+
+      .empty-cart {
+        text-align: center;
+        padding: 3rem;
+        color: #5c4b3c;
+      }
+
+      .empty-cart i {
+        font-size: 4rem;
+        color: #8b7355;
+        margin-bottom: 1rem;
+      }
+
+      /* Estilo do botão Finalizar Compra */
+      .finalize-button {
+        background: #8b7355;
+        color: white;
+        border: none;
+        padding: 1.2rem 2rem;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+        font-size: 1.2rem;
+        width: 100%;
+        margin-top: 1rem;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .finalize-button:hover {
+        background: #a68b6f;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+      }
+
+      h1 {
+        color: rgb(97, 67, 19);
+        text-align: center;
+        margin: 2rem 0;
+        font-size: 2.5rem;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+      }
+
+      .cart-count {
+        color: #ffffff;
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 1.9rem;
+        }
+        .finalize-button {
+          padding: 0.4rem 2rem;
+          font-size: 1rem;
+        }
+        .pix-qrcode img {
+          max-width: 150px;
+        }
+        .copy-pix {
+          padding: 0.5rem 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo-content logo">
+          <span>Café Grão Dourado</span>
+          <img
+            src="https://img.icons8.com/color/48/wheat.png"
+            alt="Logo Trigo"
+            class="logo-wheat"
+          />
+        </div>
+        <div class="nav-links">
+          <a href="index.html">Início</a>
+          <a href="cardapio.html">Cardápio</a>
+          <a href="#" class="active cart-icon">
+            <span class="cart-count">0</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Seu Carrinho</h1>
+
+      <div id="cart-content">
+        <!-- O conteúdo do carrinho será inserido via JavaScript -->
+      </div>
+
+      <div id="pix-section" class="pix-section" style="display: none">
+        <h2>Pagamento via PIX</h2>
+        <div class="pix-qrcode">
+          <img
+            src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=00020126580014BR.GOV.BCB.PIX013696984126844520400005303986540599.905802BR5913CafeGraoDourado6008BRASILIA62070503***6304E2CA"
+            alt="QR Code PIX"
+          />
+        </div>
+        <div class="pix-instructions">
+          <h3>Instruções para pagamento:</h3>
+          <ol>
+            <li>Abra o aplicativo do seu banco</li>
+            <li>Escolha a opção PIX</li>
+            <li>Escaneie o QR Code ou copie a chave PIX abaixo</li>
+            <li>Confirme o valor e finalize o pagamento</li>
+          </ol>
+          <p>Chave PIX: 96984126844</p>
+          <button class="copy-pix" onclick="copyPixKey()">
+            <i class="fas fa-copy"></i> Copiar Chave PIX
+          </button>
+        </div>
+        <div id="payment-status" class="payment-status"></div>
+      </div>
+    </main>
+
+    <script src="carrinho.js"></script>
+  </body>
+</html>

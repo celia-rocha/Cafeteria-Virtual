@@ -1,0 +1,401 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #c19e73;
+  line-height: 1.6;
+}
+header {
+  background-color: rgb(141, 95, 22);
+  box-shadow: 0 2px 5px rgb(141, 95, 22);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  padding: 1.5rem 0;
+}
+
+nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff5e6;
+  font-style: oblique;
+}
+
+.logo-content {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-right: auto;
+}
+
+.logo-wheat {
+  height: 3rem;
+  width: auto;
+  margin-left: 0.2rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.nav-links a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: #fff5e6;
+  font-weight: 500;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+  letter-spacing: 1px;
+}
+
+/* Estilo para o novo ícone de like */
+.like-icon img {
+  width: 1.9rem;
+  height: 1.9rem;
+  vertical-align: middle;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #d2b48c;
+  bottom: -5px;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.nav-links a:hover {
+  transform: translateY(-3px);
+  color: rgb(191, 158, 104);
+}
+.hamburger {
+  display: none;
+  font-size: 2.5rem;
+  color: #fff5e6;
+  cursor: pointer;
+  user-select: none;
+}
+
+.cart-icon {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  background-image: url("https://img.icons8.com/?size=100&id=y2uWMIRZ5lJm&format=png&color=FFFFFF");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.cart-icon > * {
+  display: none; /* Oculta todos os filhos diretos */
+}
+
+.cart-count {
+  position: absolute;
+  top: -12px;
+  right: 1px;
+  background: none;
+  color: #fff5e6;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 0;
+  min-width: unset;
+  min-height: unset;
+  border-radius: 0;
+  display: block;
+  z-index: 2;
+}
+
+main {
+  max-width: 1200px;
+  margin: 8rem auto 2rem;
+  padding: 0 1rem;
+}
+
+h1 {
+  font-family: "Playfair Display", serif;
+  text-align: center;
+  color: rgb(97, 67, 19);
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.119);
+}
+
+.menu-category {
+  margin-bottom: 3rem;
+}
+
+.menu-category h2 {
+  font-family: "Playfair Display", serif;
+  color: rgb(97, 67, 19);
+  margin-bottom: 1.5rem;
+  font-size: 30px;
+  border-bottom: 2px solid #8b7355;
+  padding-bottom: 0.5rem;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.menu-item {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(139, 115, 85, 0.1);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+.menu-item:hover {
+  transform: translateY(-5px);
+}
+
+.menu-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.menu-item h3 {
+  padding: 1rem 1rem 0.5rem;
+  color: #333;
+  font-size: 1.2rem;
+}
+
+.menu-item .description {
+  padding: 0 1rem;
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.menu-item .price {
+  padding: 0 1rem;
+  color: #8b7355;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.add-to-cart {
+  width: 100%;
+  padding: 1.2rem;
+  background-color: #8b7355;
+  color: #fff5e6;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  margin-top: auto;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.add-to-cart:hover {
+  background-color: #a68b6f;
+}
+
+.choose-flavor-btn {
+  width: 100%;
+  padding: 1.2rem;
+  background-color: #8b7355;
+  color: #fff5e6;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  margin-top: auto;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.choose-flavor-btn:hover {
+  background-color: #a68b6f;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.sabor-opcoes span {
+  font-weight: bold;
+  color: #8b7355;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.sabor-btn {
+  background: rgb(110 87 53);
+  color: #ffffff;
+  border: 1px solid #8b7355;
+  border-radius: 5px;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.sabor-btn:hover {
+  background: #8b7355;
+  color: #fff5e6;
+}
+
+.cart-notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #8b7355;
+  color: #fff5e6;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: none;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0.5rem;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 1rem;
+  }
+  .nav-links {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: nowrap;
+    font-size: 1.2rem;
+  }
+
+  .logo-content {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  .menu-category h2 {
+    font-size: 1.2rem;
+  }
+}
+/* Novo botão hamburger */
+.hamburger {
+  display: none;
+  font-size: 2.3rem;
+  color: #fff5e6;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Esconder nav-links e mostrar hamburger em telas menores */
+@media (max-width: 600px) {
+  .nav-links {
+    display: none; /* esconde menu normal */
+    flex-direction: column;
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    background-color: rgb(141, 95, 22);
+    border-radius: 8px;
+    padding: 1rem;
+    gap: 1rem;
+    width: 180px;
+    z-index: 1100;
+  }
+
+  .nav-links.show {
+    display: flex; /* mostra o menu ao abrir */
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #d2b48c;
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+
+  .hamburger {
+    display: block; /* mostra o hamburger */
+  }
+
+  /* Responsividade para telas menores */
+  @media (max-width: 768px) {
+    header {
+      padding: 0.9rem 0; /* diminui o espaço do header */
+    }
+
+    .logo {
+      font-size: 1.4rem; /* reduz o tamanho da fonte */
+    }
+
+    .logo-wheat {
+      height: 2rem; /* imagem menor */
+    }
+    .menu-item img {
+      height: 150px;
+    }
+    .add-to-cart {
+      padding: 0.8rem;
+    }
+  }
+}

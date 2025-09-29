@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Grão Dourado</title>
+    <link rel="stylesheet" href="cardapio.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+          <div class="logo-content logo">
+            <span>Café Grão Dourado</span>
+            <img src="https://img.icons8.com/color/48/wheat.png" alt="Logo Trigo" class="logo-wheat" />
+          </div>
+      
+          <div class="hamburger" id="hamburger">
+            &#9776;
+          </div>
+      
+          <div class="nav-links" id="nav-links">
+            <a href="#" class="like-icon">
+              <img src="https://img.icons8.com/?size=100&id=Y6AAeSVIcpWt&format=png&color=ffffff" alt="Like" />
+            </a>
+            <a href="index.html">Início</a>
+            <a href="#" class="active">Cardápio</a>
+            <a href="#" class="cart-icon">
+              <span class="cart-count">0</span>
+            </a>
+          </div>
+        </nav>
+      </header>
+      
+
+    <main>
+        <h1>Nosso Cardápio</h1>
+        <div class="menu-container">
+            <div class="menu-category">
+                <h2>Cafés Especiais</h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <img src="images/aCappuccino-classico.png" alt="Cappuccino Clássico">
+                        <h3>Cappuccino Clássico</h3>
+                        <p class="description">Café expresso com leite vaporizado e espuma de leite cremosa</p>
+                        <p class="price">R$ 11,99</p>
+                        <button class="add-to-cart" data-item="Cappuccino Clássico" data-price="12.90">
+                            <i class="fas fa-plus"></i> Adicionar ao Carrinho
+                        </button>
+                    </div>
+
+                    <div class="menu-item">
+                        <img src="images/aLatte-Macchiato.png" alt="Latte Macchiato">
+                        <h3>Latte Macchiato</h3>
+                        <p class="description">Leite vaporizado com um toque de café expresso</p>
+                        <p class="price">R$ 14,99</p>
+                        <button class="add-to-cart" data-item="Latte Macchiato" data-price="14.90">
+                            <i class="fas fa-plus"></i> Adicionar ao Carrinho
+                        </button>
+                    </div>
+
+                    <!-- Café Expresso com nova imagem -->
+                    <div class="menu-item">
+                        <img src="images/aCafé-express.png" alt="Café Expresso">
+                        <h3>Café Expresso</h3>
+                        <p class="description">Café puro, intenso e aromático, extraído na hora</p>
+                        <p class="price">R$ 8,00</p>
+                        <button class="add-to-cart" data-item="Café Expresso" data-price="8.00">
+                            <i class="fas fa-plus"></i> Adicionar ao Carrinho
+                        </button>
+                    </div>
+
+                    <!-- Cappuccino Cremoso com nova imagem -->
+                    <div class="menu-item">
+                        <img src="images/aCappuccino-cremoso.png" alt="Cappuccino Cremoso">
+                        <h3>Cappuccino Cremoso</h3>
+                        <p class="description">Cappuccino com canela e chocolate, super cremoso</p>
+                        <p class="price">R$ 14,99</p>
+                        <button class="add-to-cart" data-item="Cappuccino Cremoso" data-price="13.90">
+                            <i class="fas fa-plus"></i> Adicionar ao Carrinho
+                        </button>
+                    </div>
+
+                    <!-- Suco Natural -->
+                    <div class="menu-item" id="suco-item">
+                        <img src="images/aSuco.png">
+                        <h3>Suco Natural</h3>
+                        <p class="description">Suco natural de frutas frescas, geladinho e saudável</p>
+                        <p class="price">R$ 11,99</p>
+                        <button class="choose-flavor-btn" onclick="mostrarSabores()">
+                            <i class="fas fa-lemon"></i> Escolha seu sabor
+                        </button>
+                        <div id="sabor-opcoes" class="sabor-opcoes" style="display: none; margin-top: 1rem;">
+                            <span>Escolha o sabor:</span>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
+                                <button class="sabor-btn" onclick="adicionarSuco('Maracujá')">Maracujá</button>
+                                <button class="sabor-btn" onclick="adicionarSuco('Laranja')">Laranja</button>
+                                <button class="sabor-btn" onclick="adicionarSuco('Abacaxi')">Abacaxi</button>
+                                <button class="sabor-btn" onclick="adicionarSuco('Acerola')">Acerola</button>
+                                <button class="sabor-btn" onclick="adicionarSuco('Manga')">Manga</button>
+                                <button class="sabor-btn" onclick="adicionarSuco('Uva')">Uva</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Água Mineral -->
+                    <div class="menu-item">
+                        <img src="images/Agua.png" alt="Água Mineral">
+                        <h3>Água Mineral</h3>
+                        <p class="description">Água mineral gelada, perfeita para refrescar</p>
+                        <p class="price">R$ 5,99</p>
+                        <button class="add-to-cart" data-item="Água Mineral" data-price="4.00">
+                            <i class="fas fa-plus"></i> Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h2>Acompanhamentos</h2>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <img src="images/acafé-completo.png" alt="Café da Manhã Completo">
+                        <h3>Café da Manhã Completo</h3>
+                        <p class="description">Pão de queijo, bolo, frutas, café e suco especial</p>
+                        <p class="price">R$ 29,99</p>
+                        <button class="add-to-cart" data-item="Café da Manhã Completo" data-price="29.90">
+                            <i class="fas fa-plus"></i> Adicionar ao Carrinho
+                        </button>
+                    </div>
+
+                    <div class="menu-item">
+                        <img src="images/aTapioca.png" alt="Tapioca com ovos">
+                        <h3>Tapioca com ovos</h3>
+                        <p class="description">Tapioca com ovos e queijo</p>
+                        <p class="price">R$ 11,99</p>
+                        <button class="add-to-cart" data-item="Tapioca com Café" data-price="19.90">
+                            <i class="fas fa-plus"></i> Adicionar ao Carrinho
+                        </button>
+                    </div>
+
+                    <div class="menu-item">
+                        <img src="images/aCroissant.png" alt="Croissant com Café">
+                        <h3>Croissant</h3>
+                        <p class="description">Croissant quentinho + café especial</p>
+                        <p class="price">R$ 9,99</p>
+                        <button class="add-to-cart" data-item="Croissant com Café" data-price="17.90">
+                            <i class="fas fa-plus"></i> Adicionar ao Carrinho
+                        </button>
+                    </div>
+
+                    <!-- Novo Misto Quente -->
+                    <div class="menu-item">
+                        <img src="images/aMisto-quente.png" alt="Misto Quente">
+                        <h3>Misto Quente</h3>
+                        <p class="description">Pão de forma recheado com queijo e presunto, quentinho e crocante</p>
+                        <p class="price">R$ 7,99</p>
+                        <button class="add-to-cart" data-item="Misto Quente" data-price="10.00">
+                            <i class="fas fa-plus"></i> Adicionar ao Carrinho
+                        </button>
+                    </div>
+
+                    <!-- Nova Tapioquinha de Ovo -->
+                    <div class="menu-item">
+                        <img src="images/aPao-de-queijo.png" alt="Tapioquinha de Ovo">
+                        <h3>Pão de Queijo</h3>
+                        <p class="description">Pão de queijo super recheado e macio</p>
+                        <p class="price">R$ 6,99</p>
+                        <button class="add-to-cart" data-item="Tapioquinha de Ovo" data-price="12.00">
+                            <i class="fas fa-plus"></i> Adicionar ao Carrinho
+                        </button>
+                    </div>
+
+                    <!-- Nova div de Bolos -->
+                    <div class="menu-item" id="bolo-item">
+                        <img src="images/aBolo.png" alt="Bolo">
+                        <h3>Bolo</h3>
+                        <p class="description">Fatia de bolo de chocolate com recheio de chocolate</p>
+                        <p class="price">R$ 11,99</p>
+                        <button class="choose-flavor-btn" onclick="mostrarSaboresBolo()">
+                            <i class="fas fa-birthday-cake"></i> Escolha seu sabor
+                        </button>
+                        <div id="sabor-bolo-opcoes" class="sabor-opcoes" style="display: none; margin-top: 1rem;">
+                            <span>Escolha o sabor:</span>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem;">
+                                <button class="sabor-btn" onclick="adicionarBolo('Cenoura')">Bolo de Cenoura</button>
+                                <button class="sabor-btn" onclick="adicionarBolo('Milho')">Bolo de Milho</button>
+                                <button class="sabor-btn" onclick="adicionarBolo('Laranja')">Bolo de Laranja</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="cart-notification" class="cart-notification">
+        Item adicionado ao carrinho!
+    </div>
+
+    <script src="cardapio.js"></script>
+</body>
+</html> 
