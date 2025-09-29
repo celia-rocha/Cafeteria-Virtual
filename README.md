@@ -1,4 +1,4 @@
-# Café Grão Dourado
+# Café Grão Dourado ☕️ ✨
 
 Este site é uma Cafeteria interativa, construída com HTML5, CSS3 e JavaScript, onde você pode:
 
@@ -9,6 +9,7 @@ Este site é uma Cafeteria interativa, construída com HTML5, CSS3 e JavaScript,
   
 - Design moderno e responsivo
 - Layout adaptável para diferentes tamanhos de tela
+
 
 
 
