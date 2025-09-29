@@ -1,4 +1,4 @@
-# Café Grão Dourado - Página de Apresentação
+# Café Grão Dourado
 
 Este é um projeto de página de apresentação para a Cafeteria Grão Dourado, desenvolvido com HTML e CSS.
 
@@ -25,4 +25,5 @@ Este é um projeto de página de apresentação para a Cafeteria Grão Dourado, 
 
 - `index.html` - Estrutura da página
 - `styles.css` - Estilos e animações
+
 - `README.md` - Documentação do projeto 
