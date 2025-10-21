@@ -9,5 +9,6 @@ Este site é uma Cafeteria interativa, construída com HTML5, CSS3 e JavaScript,
 - Design moderno e responsivo
 - Layout adaptável para diferentes tamanhos de tela
 
+https://celia-rocha.github.io/Cafeteria-Virtual/
 
 
