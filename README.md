@@ -9,9 +9,5 @@ Este site é uma Cafeteria interativa, construída com HTML5, CSS3 e JavaScript,
 - Design moderno e responsivo
 - Layout adaptável para diferentes tamanhos de tela
 
-## 📸 Preview
 
-<img src="./Cardapio.png" alt="Página do Cardápio" width="100%"/>
-
-<img src="./Carrinho.png" alt="Carrinho de Compras com QR Code PIX" width="100%"/>
 
